@@ -2883,10 +2883,11 @@ const process = ({ rootDir }) => pipe(
 
 const saveFile = ({ rootDir }) => fileReport => {
   const slashIndex = fileReport.path.lastIndexOf('/')
-  const folder = take(slashIndex, fileReport.path)
-  const fileName = dropLast('.js'.length, fileReport.path.slice(slashIndex + 1))
 
-  const destFolder = path.join(rootDir, folder, SUB_FOLDER)
+  const folder = slashIndex >= 0 ? take(slashIndex, fileReport.path) : ''
+  const fileName = dropLast('.js'.length, slashIndex >= 0 ? fileReport.path.slice(slashIndex + 1) : fileReport.path)
+
+  const destFolder = path.join(rootDir, folder, SUB_FOLDER)  
 
   console.log('slashIndex is', slashIndex)
 
