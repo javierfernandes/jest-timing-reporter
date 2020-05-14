@@ -3,5 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Javier Fernandes <javier.fernandes@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js && jest"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.1",
+    "eslint": "^6.3.0"
+  },
+  "dependencies": {
+    "ramda": "^0.27.0"
+  }
 }
