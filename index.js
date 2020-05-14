@@ -41,6 +41,8 @@ const saveFile = ({ rootDir }) => fileReport => {
 
   const destFolder = path.join(rootDir, folder, SUB_FOLDER)
 
+  console.log('slashIndex is', slashIndex)
+
   console.log('folder', folder)
   console.log('fileName', fileName)
   console.log('destFolder', destFolder)
