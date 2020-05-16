@@ -2,6 +2,7 @@
 
 A Jest reporter that collects test execution time into snapshots files as JSON which can be used later with [jest-timing-action](https://github.com/javierfernandes/jest-timing-action).
 
+
 # Usage
 
 Install with
