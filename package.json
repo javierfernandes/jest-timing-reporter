@@ -4,6 +4,19 @@
   "main": "index.js",
   "author": "Javier Fernandes <javier.fernandes@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierfernandes/jest-timing-reporter.git"
+  },
+  "keywords": [
+    "Jest",
+    "Reporter",
+    "JavaScript"
+  ],
+  "bugs": {
+    "url": "https://github.com/javierfernandes/jest-timing-reporter/issues"
+  },
+  "homepage": "https://github.com/javierfernandes/jest-timing-reporter#readme",
   "scripts": {
     "lint": "eslint index.js",
     "package": "ncc build index.js -o dist",
@@ -11,9 +24,15 @@
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.1",
-    "eslint": "^6.3.0"
+    "eslint": "^6.3.0",
+    "husky": "^4.2.5"
   },
   "dependencies": {
     "ramda": "^0.27.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run package && git add dist"
+    }
   }
 }
